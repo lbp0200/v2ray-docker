@@ -19,4 +19,4 @@ RUN sed -i "s/23ad6b10-8d1a-40f7-8ad0-e3e35cd38297/${UUID}/g" "/opt/v2ray/config
 
 EXPOSE 80
 
-CMD ["/opt/v2ray/v2ray", "-config /opt/v2ray/config.server.json"]
+CMD ["/opt/v2ray/v2ray", "-config", "/opt/v2ray/config.server.json"]
