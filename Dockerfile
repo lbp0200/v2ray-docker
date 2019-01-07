@@ -13,7 +13,7 @@ RUN apk add --no-cache --virtual .build-deps ca-certificates curl \
 
 COPY config.json /opt/v2ray/config.server.json
 
-RUN sed -i "s/23ad6b10-8d1a-40f7-8ad0-e3e35cd38297/${UUID}/g" "/etc/v2ray/config.server.json"
+RUN sed -i "s/23ad6b10-8d1a-40f7-8ad0-e3e35cd38297/${UUID}/g" "/opt/v2ray/config.server.json"
 
 # ENTRYPOINT /opt/v2ray/v2ray -config /opt/v2ray/
 
