@@ -1,6 +1,6 @@
 FROM alpine:latest
 
-ENV UUID=23ad6b10-8d1a-40f7-8ad0-e3e35cd38297 VER=4.18.0
+ENV UUID=23ad6b10-8d1a-40f7-8ad0-e3e35cd38297 VER=4.20.0
 
 RUN apk add --no-cache --virtual .build-deps ca-certificates curl \
  && echo https://github.com/v2ray/v2ray-core/releases/download/v${VER}/v2ray-linux-64.zip \
