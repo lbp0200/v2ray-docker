@@ -11,12 +11,11 @@ RUN apk add --no-cache --virtual .build-deps ca-certificates curl \
  && chmod +x /opt/v2ray/v2ctl \
  && rm -rf v2ray.zip 
 
+COPY start.sh /opt/v2ray/
 COPY config.json /opt/v2ray/config.server.json
 
-RUN sed -i "s/23ad6b10-8d1a-40f7-8ad0-e3e35cd38297/${UUID}/g" "/opt/v2ray/config.server.json"
-
-# ENTRYPOINT /opt/v2ray/v2ray -config /opt/v2ray/
-
 EXPOSE 80
+
+ENTRYPOINT ["/opt/v2ray/start.sh"]
 
 CMD ["/opt/v2ray/v2ray", "-config", "/opt/v2ray/config.server.json"]
